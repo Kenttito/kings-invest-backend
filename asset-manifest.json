@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/king-invest/static/css/main.af12aa9e.css",
+    "main.js": "/king-invest/static/js/main.8a59397a.js",
+    "static/js/453.670e15c7.chunk.js": "/king-invest/static/js/453.670e15c7.chunk.js",
+    "index.html": "/king-invest/index.html",
+    "main.af12aa9e.css.map": "/king-invest/static/css/main.af12aa9e.css.map",
+    "main.8a59397a.js.map": "/king-invest/static/js/main.8a59397a.js.map",
+    "453.670e15c7.chunk.js.map": "/king-invest/static/js/453.670e15c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af12aa9e.css",
+    "static/js/main.8a59397a.js"
+  ]
+}
