@@ -25,19 +25,19 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 # Copy composer files first for better caching
-COPY composer.json composer.lock ./
+COPY Backend/composer.json Backend/composer.lock ./
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
 # Copy package files
-COPY package.json package-lock.json ./
+COPY Backend/package.json Backend/package-lock.json ./
 
 # Install Node.js dependencies
 RUN npm install --legacy-peer-deps
 
 # Copy the rest of the application
-COPY . .
+COPY Backend/ .
 
 # Build assets
 RUN npm run build
