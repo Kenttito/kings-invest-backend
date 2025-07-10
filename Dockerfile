@@ -54,6 +54,11 @@ RUN npm run build
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
 
+# Laravel setup
+RUN php artisan config:cache
+RUN php artisan route:cache
+RUN php artisan view:cache
+
 # Expose port 80
 EXPOSE 80
 
