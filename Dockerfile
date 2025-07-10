@@ -24,8 +24,12 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy composer files and artisan first for better caching
-COPY Backend/composer.json Backend/composer.lock Backend/artisan ./
+# Copy composer files and essential Laravel files first for better caching
+COPY Backend/composer.json Backend/composer.lock ./
+COPY Backend/artisan ./
+COPY Backend/bootstrap/ ./bootstrap/
+COPY Backend/app/ ./app/
+COPY Backend/config/ ./config/
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
