@@ -30,6 +30,7 @@ COPY Backend/artisan ./
 COPY Backend/bootstrap/ ./bootstrap/
 COPY Backend/app/ ./app/
 COPY Backend/config/ ./config/
+COPY Backend/routes/ ./routes/
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
