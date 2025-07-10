@@ -34,17 +34,8 @@ COPY Backend/config/ ./config/
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Copy package files
-COPY Backend/package.json Backend/package-lock.json ./
-
-# Install Node.js dependencies
-RUN npm install --legacy-peer-deps
-
 # Copy the rest of the application
 COPY Backend/ .
-
-# Build assets
-RUN npm run build
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
