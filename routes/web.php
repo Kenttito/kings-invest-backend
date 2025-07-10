@@ -30,3 +30,8 @@ Route::get('/debug', function () {
         'db' => $dbStatus,
     ]);
 });
+
+Route::get('/debug-files', function () {
+    $files = scandir(public_path());
+    return response()->json(['public_files' => $files]);
+});
