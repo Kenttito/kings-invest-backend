@@ -51,15 +51,11 @@ COPY Backend/ .
 # Build assets
 RUN npm run build
 
-# Copy startup script
-COPY Backend/start.sh /start.sh
-RUN chmod +x /start.sh
-
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
 
 # Expose port 80
 EXPOSE 80
 
-# Start with our custom script
-CMD ["/start.sh"] 
+# Start Apache
+CMD ["apache2-foreground"] 
